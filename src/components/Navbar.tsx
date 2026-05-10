@@ -82,7 +82,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="lg:hidden bg-background border-t shadow-lg"
+            className="lg:hidden bg-brand-purple border-t border-brand-yellow/20 shadow-lg"
           >
             <div className="px-5 py-4 grid gap-1">
               {links.map((l) => (
@@ -91,15 +91,15 @@ export function Navbar() {
                   to={l.to}
                   onClick={() => setOpen(false)}
                   activeOptions={{ exact: l.to === "/" }}
-                  activeProps={{ className: "text-brand-purple bg-brand-yellow/40" }}
-                  className="px-4 py-3 rounded-xl font-semibold hover:bg-muted"
+                  activeProps={{ className: "!text-brand-black !bg-brand-yellow" }}
+                  className="px-4 py-3 rounded-xl font-bold text-brand-yellow hover:bg-brand-yellow hover:text-brand-black transition-colors"
                 >
                   {l.label}
                 </Link>
               ))}
               <a
                 href="https://wa.me/96522288242"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-purple text-primary-foreground px-5 py-3 font-bold"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow text-brand-black px-5 py-3 font-extrabold shadow-pop"
               >
                 <MessageCircle className="size-4" /> Book Now
               </a>
