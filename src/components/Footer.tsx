@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import logo from "@/assets/happy-town-logo.png";
 
 export function Footer() {
   return (
