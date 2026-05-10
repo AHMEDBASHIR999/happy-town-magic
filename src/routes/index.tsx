@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Suspense, lazy } from "react";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
@@ -22,9 +22,8 @@ import softplay from "@/assets/softplay.webp";
 import arcade from "@/assets/arcade.webp";
 import birthday from "@/assets/birthday.webp";
 import funvillage from "@/assets/funvillage.webp";
+import pandaLogo from "@/assets/happy-town-logo.png";
 import { FadeIn } from "@/components/Motion";
-
-const Panda3D = lazy(() => import("@/components/Panda3D").then((m) => ({ default: m.Panda3D })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -124,13 +123,32 @@ function Hero() {
           </motion.div>
         </div>
 
-        {/* 3D Panda */}
-        <div className="relative h-[420px] md:h-[520px] lg:h-[600px]">
-          <div className="absolute inset-0 animate-float">
-            <Suspense fallback={<div className="w-full h-full grid place-items-center"><div className="size-40 rounded-full bg-brand-yellow/40 animate-pulse" /></div>}>
-              <Panda3D />
-            </Suspense>
-          </div>
+        {/* Animated Panda Logo */}
+        <div className="relative h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-10 rounded-full bg-brand-yellow/40 blur-2xl"
+          />
+          <motion.img
+            src={pandaLogo}
+            alt="Happy Town panda mascot"
+            className="relative w-full max-w-md drop-shadow-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              y: [0, -18, 0],
+              rotate: [-2, 2, -2],
+            }}
+            transition={{
+              scale: { duration: 0.8, ease: "easeOut" },
+              opacity: { duration: 0.8 },
+              y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            whileHover={{ scale: 1.05 }}
+          />
         </div>
       </motion.div>
 

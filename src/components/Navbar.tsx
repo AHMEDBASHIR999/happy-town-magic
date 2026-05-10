@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/happy-town-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -32,13 +33,12 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8 h-18 flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
-          <div className="relative h-11 w-11 rounded-full bg-brand-yellow flex items-center justify-center shadow-pop transition-transform group-hover:rotate-12">
-            <span className="text-2xl">🐼</span>
-          </div>
-          <span className="font-display font-extrabold text-xl tracking-tight">
-            Happy <span className="text-brand-purple">Town</span>
-          </span>
+        <Link to="/" className="flex items-center group" onClick={() => setOpen(false)} aria-label="Happy Town home">
+          <img
+            src={logo}
+            alt="Happy Town"
+            className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
