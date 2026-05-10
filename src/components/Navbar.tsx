@@ -47,8 +47,12 @@ export function Navbar() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-brand-purple bg-brand-yellow/40" }}
-              className="px-3 py-2 rounded-full text-sm font-semibold text-foreground/80 hover:text-brand-purple hover:bg-brand-yellow/30 transition-colors"
+              activeProps={{ className: "!text-brand-black bg-brand-yellow" }}
+              className={`px-3 py-2 rounded-full text-sm font-bold transition-colors ${
+                scrolled
+                  ? "text-brand-purple hover:bg-brand-yellow hover:text-brand-black"
+                  : "text-brand-yellow hover:bg-brand-yellow hover:text-brand-black"
+              }`}
             >
               {l.label}
             </Link>
