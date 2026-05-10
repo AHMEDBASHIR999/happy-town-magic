@@ -24,8 +24,8 @@ function ContactPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-3 gap-6 mb-16">
           {[
-            { icon: MessageCircle, label: "WhatsApp", value: "+965 0000 0000", href: "https://wa.me/96500000000", color: "bg-brand-purple text-primary-foreground" },
-            { icon: Phone, label: "Call us", value: "+965 0000 0000", href: "tel:+96500000000", color: "bg-brand-yellow text-brand-black" },
+            { icon: MessageCircle, label: "WhatsApp", value: "+965 22288242", href: "https://wa.me/96522288242", color: "bg-brand-purple text-primary-foreground" },
+            { icon: Phone, label: "Call us", value: "+965 22288242", href: "tel:+96522288242", color: "bg-brand-yellow text-brand-black" },
             { icon: Mail, label: "Email", value: "hello@happytown.kw", href: "mailto:hello@happytown.kw", color: "bg-brand-purple text-primary-foreground" },
           ].map((c, i) => (
             <FadeIn key={c.label} delay={i * 0.1}>

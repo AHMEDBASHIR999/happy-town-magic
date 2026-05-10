@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import logo from "@/assets/happy-town-logo.png";
 
 export function Footer() {
   return (
@@ -9,21 +10,20 @@ export function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="size-12 rounded-full bg-brand-yellow flex items-center justify-center text-2xl shadow-pop">🐼</div>
-            <span className="font-display font-extrabold text-2xl">Happy Town</span>
+          <div className="bg-primary-foreground rounded-2xl p-3 inline-block mb-4 shadow-pop">
+            <img src={logo} alt="Happy Town" className="h-14 w-auto" />
           </div>
           <p className="text-sm text-primary-foreground/80 leading-relaxed">
             Where smiles never end. Kuwait's most loved indoor play destination for kids of all ages.
           </p>
           <div className="flex gap-3 mt-5">
-            <a href="https://wa.me/96500000000" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
+            <a href="https://wa.me/96522288242" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
               <MessageCircle className="size-5" />
             </a>
-            <a href="#" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
+            <a href="https://www.instagram.com/happytownkw?igsh=ZWpxMnhiMm41NXJ6" target="_blank" rel="noreferrer" aria-label="Instagram" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
               <Instagram className="size-5" />
             </a>
-            <a href="tel:+96500000000" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
+            <a href="tel:+96522288242" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
               <Phone className="size-5" />
             </a>
           </div>
@@ -54,7 +54,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2"><Clock className="size-4 mt-0.5 shrink-0" /> Sat–Wed: 10am – 10pm</li>
             <li className="flex items-start gap-2"><Clock className="size-4 mt-0.5 shrink-0" /> Thu–Fri: 10am – Midnight</li>
-            <li className="flex items-start gap-2"><Phone className="size-4 mt-0.5 shrink-0" /> +965 0000 0000</li>
+            <li className="flex items-start gap-2"><Phone className="size-4 mt-0.5 shrink-0" /> +965 22288242</li>
           </ul>
         </div>
       </div>
