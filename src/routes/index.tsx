@@ -374,8 +374,9 @@ function Testimonials() {
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[40rem] rounded-full bg-brand-yellow/15 blur-3xl" />
       <div className="mx-auto max-w-7xl px-5 lg:px-8 relative">
         <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block px-3 py-1 rounded-full bg-brand-yellow text-brand-black text-xs font-extrabold uppercase tracking-widest">Loved by Families</span>
+          <span className="inline-block px-3 py-1 rounded-full bg-brand-yellow text-brand-black text-xs font-extrabold uppercase tracking-widest">Real Testimonials</span>
           <h2 className="mt-4 font-display font-extrabold text-4xl md:text-5xl">Smiles say it all</h2>
+          <p className="mt-3 text-primary-foreground/80">Verified reviews from our happy families on Google.</p>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((t, i) => (
