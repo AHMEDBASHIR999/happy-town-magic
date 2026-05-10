@@ -20,7 +20,7 @@ export function Footer() {
             <a href="https://wa.me/96522288242" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
               <MessageCircle className="size-5" />
             </a>
-            <a href="#" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
+            <a href="https://www.instagram.com/happytownkw?igsh=ZWpxMnhiMm41NXJ6" target="_blank" rel="noreferrer" aria-label="Instagram" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
               <Instagram className="size-5" />
             </a>
             <a href="tel:+96522288242" className="size-10 rounded-full bg-brand-yellow text-brand-black flex items-center justify-center hover:scale-110 transition-transform">
