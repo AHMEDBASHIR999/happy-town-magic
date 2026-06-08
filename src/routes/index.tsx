@@ -15,13 +15,14 @@ import {
   PartyPopper,
   Gamepad2,
   Castle,
-  MessageCircle,
+  Phone,
 } from "lucide-react";
 import heroImg from "@/assets/hero-playground.jpg";
-import softplay from "@/assets/softplay.webp";
+import softplay from "@/assets/softpl.jpg";
 import arcade from "@/assets/arcade.webp";
-import birthday from "@/assets/birthday.webp";
-import funvillage from "@/assets/funvillage.webp";
+import birthday from "@/assets/birth.jpg";
+import funvillage from "@/assets/unnamed.jpg";
+import schooltrip from "@/assets/aa.jpg";
 import pandaLogo from "@/assets/happy-town-logo.png";
 import { FadeIn } from "@/components/Motion";
 
@@ -89,7 +90,7 @@ function Hero() {
             className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-xl"
           >
             A magical indoor play world for kids of all ages. Soft play, arcade games,
-            birthday rooms and unforgettable adventures — all under one happy roof.
+            birthday rooms, unforgettable adventures — all under one happy roof.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,10 +99,10 @@ function Hero() {
             className="mt-8 flex flex-wrap gap-3"
           >
             <a
-              href="https://wa.me/96522288242"
+              href="tel:+96522288242"
               className="inline-flex items-center gap-2 rounded-full bg-brand-yellow text-brand-black px-7 py-4 text-base font-extrabold shadow-glow hover:scale-105 transition-transform"
             >
-              <MessageCircle className="size-5" /> Book Now
+              <Phone className="size-5" /> Book Now
             </a>
             <Link
               to="/locations"
@@ -263,30 +264,18 @@ function BirthdayCTA() {
               viewport={{ once: true }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-brand-purple via-brand-purple/90 to-brand-purple/40" />
-            <div className="relative grid lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <Cake className="size-12 text-brand-yellow mb-4" />
-                <h2 className="font-display font-extrabold text-4xl md:text-6xl leading-tight">
-                  Birthdays they'll <span className="text-brand-yellow">always remember</span>
-                </h2>
-                <p className="mt-5 text-lg text-primary-foreground/85 max-w-lg">
-                  Themed party rooms, dedicated hosts, decorations and unlimited play. Three packages for every dream celebration.
-                </p>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <Link to="/birthday-parties" className="inline-flex items-center gap-2 rounded-full bg-brand-yellow text-brand-black px-7 py-4 font-extrabold shadow-glow hover:scale-105 transition-transform">
-                    Plan a Birthday <ArrowRight className="size-5" />
-                  </Link>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                {["Basic", "Standard", "Premium"].map((tier, i) => (
-                  <FadeIn key={tier} delay={i * 0.1}>
-                    <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur border border-primary-foreground/20 p-4 text-center">
-                      <div className="text-brand-yellow font-display font-extrabold text-xl">{tier}</div>
-                      <div className="text-xs text-primary-foreground/70 mt-1">From {[60, 95, 150][i]} KD</div>
-                    </div>
-                  </FadeIn>
-                ))}
+            <div className="relative max-w-2xl">
+              <Cake className="size-12 text-brand-yellow mb-4" />
+              <h2 className="font-display font-extrabold text-4xl md:text-6xl leading-tight">
+                Birthdays they'll <span className="text-brand-yellow">always remember</span>
+              </h2>
+              <p className="mt-5 text-lg text-primary-foreground/85 max-w-lg">
+                Themed party rooms, dedicated hosts, decorations and unlimited play. Three packages for every dream celebration.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link to="/birthday-parties" className="inline-flex items-center gap-2 rounded-full bg-brand-yellow text-brand-black px-7 py-4 font-extrabold shadow-glow hover:scale-105 transition-transform">
+                  Plan a Birthday <ArrowRight className="size-5" />
+                </Link>
               </div>
             </div>
           </div>
@@ -307,7 +296,7 @@ function SchoolTrips() {
             Group rates, exclusive sessions, free teacher entry and structured experiences your students will rave about.
           </p>
           <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm font-semibold">
-            {["Free teacher entry", "Group bookings 20+", "Flexible weekday slots", "Catering options"].map((b) => (
+            {["Free teacher entry", "Group bookings 20+", "Flexible weekday slots", "Special rates for higher numbers"].map((b) => (
               <li key={b} className="flex items-center gap-2"><span className="size-2 rounded-full bg-brand-purple" /> {b}</li>
             ))}
           </ul>
@@ -318,7 +307,7 @@ function SchoolTrips() {
         <FadeIn delay={0.15}>
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-purple/10 rounded-[2.5rem] rotate-3" />
-            <img src={arcade} alt="School trips at Happy Town" className="relative rounded-[2.5rem] shadow-pop w-full aspect-[4/3] object-cover" loading="lazy" />
+            <img src={schooltrip} alt="School trips at Happy Town" className="relative rounded-[2.5rem] shadow-pop w-full aspect-[4/3] object-cover" loading="lazy" />
           </div>
         </FadeIn>
       </div>
@@ -328,9 +317,9 @@ function SchoolTrips() {
 
 function LocationsPreview() {
   const locs = [
-    { name: "Marina Mall", area: "Salmiya", tag: "Flagship + Fun Village" },
-    { name: "Assima Mall", area: "Kuwait City", tag: "City Center" },
-    { name: "The Avenues", area: "Al Rai", tag: "Largest Arcade" },
+    { name: "Marina Mall", area: "Salmiya", tag: "Softplay Area + Arcade Games + Fun Village" },
+    { name: "Assima Mall", area: "Kuwait City", tag: "Softplay Area + Creative Centre" },
+    { name: "The Avenues", area: "Al Rai", tag: "Arcade Games + Softplay Area" },
   ];
   return (
     <section className="py-24">
