@@ -20,8 +20,8 @@ const locations = [
     name: "Marina Mall",
     area: "Salmiya",
     floor: "Second Floor, near food court",
-    phone: "+965 0000 0001",
-    hours: ["Sat–Wed: 10am – 10pm", "Thu–Fri: 10am – Midnight"],
+    phone: "+965 98572227",
+    hours: ["Saturday - Wednesday: 10:00 AM - 10:30PM", "Thursday - Friday 10:00 AM - 11:00 PM"],
     features: ["Soft Play", "Arcade", "Birthday Rooms", "Fun Village"],
     map: "https://www.google.com/maps?q=Marina+Mall+Kuwait&output=embed",
     directions: "https://www.google.com/maps/dir/?api=1&destination=Marina+Mall+Kuwait",
@@ -29,10 +29,10 @@ const locations = [
   {
     name: "Assima Mall",
     area: "Kuwait City",
-    floor: "Ground Floor, family wing",
-    phone: "+965 0000 0002",
-    hours: ["Sat–Wed: 10am – 10pm", "Thu–Fri: 10am – Midnight"],
-    features: ["Soft Play", "Arcade", "Birthday Rooms", "Ball Pit"],
+    floor: "Happy Town 5th Floor",
+    phone: "+965 99323061",
+    hours: ["Saturday - Wednesday: 10:00 AM - 10:00PM", "Thursday - Friday 10:00 AM - 10:30 PM"],
+    features: ["Soft Play", "Birthday Rooms", "Ball Pit"],
     map: "https://www.google.com/maps?q=Assima+Mall+Kuwait&output=embed",
     directions: "https://www.google.com/maps/dir/?api=1&destination=Assima+Mall+Kuwait",
   },
@@ -40,9 +40,9 @@ const locations = [
     name: "The Avenues",
     area: "Al Rai",
     floor: "Grand Avenue, Phase 4",
-    phone: "+965 0000 0003",
-    hours: ["Sat–Wed: 10am – 10pm", "Thu–Fri: 10am – 1am"],
-    features: ["Soft Play", "Arcade", "Trampoline Park", "Birthday Rooms"],
+    phone: "+965 91112540",
+    hours: ["Saturday - Wednesday: 10:00 AM - 10:00PM", "Thursday - Friday 10:00 AM - 11:00 PM"],
+    features: ["Soft Play", "Trampoline Park"],
     map: "https://www.google.com/maps?q=The+Avenues+Kuwait&output=embed",
     directions: "https://www.google.com/maps/dir/?api=1&destination=The+Avenues+Mall+Kuwait",
   },
@@ -87,14 +87,16 @@ function LocationsPage() {
                     ))}
                   </div>
 
-                  <a
-                    href={l.directions}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto pt-6 inline-flex items-center gap-2 rounded-full bg-brand-purple text-primary-foreground px-6 py-3 font-extrabold shadow-pop hover:scale-105 transition-transform self-start"
-                  >
-                    <Navigation className="size-4" /> Get Directions
-                  </a>
+                  <div className="mt-auto pt-6">
+                    <a
+                      href={l.directions}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-brand-purple text-primary-foreground px-5 py-2.5 text-sm font-bold shadow-pop hover:scale-105 transition-transform"
+                    >
+                      <Navigation className="size-4" /> Get Directions
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </FadeIn>

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/happy-town-logo.png";
 
@@ -48,7 +48,7 @@ export function Navbar() {
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               activeProps={{ className: "!text-brand-black bg-brand-yellow" }}
-              className={`px-3 py-2 rounded-full text-sm font-bold transition-colors ${
+              className={`px-3 py-2 rounded-full text-base font-bold transition-colors ${
                 scrolled
                   ? "text-brand-purple hover:bg-brand-yellow hover:text-brand-black"
                   : "text-brand-yellow hover:bg-brand-yellow hover:text-brand-black"
@@ -61,12 +61,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://wa.me/96522288242"
-            target="_blank"
-            rel="noreferrer"
+            href="tel:+96522288242"
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-purple text-primary-foreground px-5 py-2.5 text-sm font-bold shadow-pop hover:scale-105 transition-transform"
           >
-            <MessageCircle className="size-4" /> Book Now
+            <Phone className="size-4" /> Book Now
           </a>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -100,10 +98,10 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/96522288242"
+                href="tel:+96522288242"
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-purple text-primary-foreground px-5 py-3 font-bold"
               >
-                <MessageCircle className="size-4" /> Book Now
+                <Phone className="size-4" /> Book Now
               </a>
             </div>
           </motion.div>
