@@ -24,6 +24,13 @@ import birthday from "@/assets/birth.jpg";
 import funvillage from "@/assets/unnamed.jpg";
 import schooltrip from "@/assets/aa.jpg";
 import pandaLogo from "@/assets/happy-town-logo.png";
+import ballpit from "@/assets/ballpit.webp";
+import birthdayAlt from "@/assets/birthday.webp";
+import funvillageAlt from "@/assets/funvillage.webp";
+import softplayAlt from "@/assets/softplay.webp";
+import trampoline from "@/assets/trampoline.webp";
+import ee from "@/assets/ee.jpg";
+import tt from "@/assets/tt.jpg";
 import { FadeIn } from "@/components/Motion";
 
 export const Route = createFileRoute("/")({
@@ -387,12 +394,51 @@ function Testimonials() {
   );
 }
 
+function Gallery() {
+  const images = [
+    softplay,
+    arcade,
+    birthdayAlt,
+    trampoline,
+    softplayAlt,
+    ballpit,
+    funvillage,
+    birthday,
+    funvillageAlt,
+    schooltrip,
+    heroImg,
+    ee,
+    tt,
+  ];
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <FadeIn className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block px-3 py-1 rounded-full bg-brand-yellow text-brand-black text-xs font-extrabold uppercase tracking-widest">Gallery</span>
+          <h2 className="mt-4 font-display font-extrabold text-4xl md:text-5xl">Moments of Joy</h2>
+        </FadeIn>
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+          {images.map((img, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className="break-inside-avoid">
+                <img src={img} alt="Happy Town Gallery" className="w-full rounded-[2rem] object-cover hover:scale-[1.02] transition-transform duration-300 shadow-sm" loading="lazy" />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Home() {
   return (
     <>
       <Hero />
       <PlayAreas />
       <WhyUs />
+      <Gallery />
       <BirthdayCTA />
       <SchoolTrips />
       <LocationsPreview />
