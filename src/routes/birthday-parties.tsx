@@ -73,24 +73,24 @@ function BirthdaysPage() {
             <p className="mt-3 text-muted-foreground">Three thoughtfully designed tiers — every detail handled.</p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
             {packages.map((p, i) => (
               <FadeIn key={p.name} delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ y: -10 }}
-                  className={`relative rounded-3xl p-8 h-full border-2 transition-all ${
+                  whileHover={{ y: -8 }}
+                  className={`relative rounded-3xl p-8 h-full transition-all ${
                     p.featured
-                      ? "bg-brand-purple text-primary-foreground border-brand-yellow shadow-pop"
-                      : "bg-card border-border hover:shadow-pop"
+                      ? "bg-brand-purple text-primary-foreground shadow-pop pt-10"
+                      : "bg-card border border-border/80 shadow-md hover:shadow-lg"
                   }`}
                 >
                   {p.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand-yellow text-brand-black text-xs font-extrabold uppercase">
+                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand-yellow text-brand-black text-xs font-extrabold uppercase tracking-wide">
                       Most Popular
                     </span>
                   )}
-                  <div className={`size-14 rounded-2xl grid place-items-center mb-5 ${p.featured ? "bg-brand-yellow text-brand-black" : "bg-brand-purple text-primary-foreground"}`}>
-                    <p.icon className="size-7" />
+                  <div className={`size-12 rounded-full grid place-items-center mb-5 ${p.featured ? "bg-brand-yellow text-brand-black" : "bg-brand-purple text-primary-foreground"}`}>
+                    <p.icon className="size-5" />
                   </div>
                   <h3 className="font-display font-extrabold text-3xl">{p.name}</h3>
                   <div className="mt-3 flex items-baseline gap-1">
@@ -173,9 +173,9 @@ function BirthdaysPage() {
           </FadeIn>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`f${i}`} className="bg-card border-2 rounded-2xl px-5">
-                <AccordionTrigger className="font-bold text-left">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+              <AccordionItem key={f.q} value={`f${i}`} className="bg-card border border-border/80 rounded-2xl px-5 border-b-0 shadow-sm">
+                <AccordionTrigger className="font-bold text-left hover:no-underline py-5">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-5">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
