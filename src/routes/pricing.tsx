@@ -17,11 +17,11 @@ export const Route = createFileRoute("/pricing")({
 });
 
 const rows = [
-  { cat: "Infants (under 2)", marina: "Free", assima: "Free", avenues: "Free" },
-  { cat: "Children (2–12)", marina: "5 KD", assima: "4 KD", avenues: "5 KD" },
-  { cat: "Special Needs", marina: "3 KD", assima: "3 KD", avenues: "3 KD" },
+  { cat: "Fun Village Marina Mall", marina: "5.500 KD", assima: "5.500 KD", avenues: "5.500 KD" },
+  { cat: "Infants (under 1)", marina: "Free", assima: "Free", avenues: "Free" },
+  { cat: "Children (1 to 9)", marina: "6.500 KD", assima: "6.500 KD", avenues: "6.500 KD" },
+  { cat: "Special Needs", marina: "3.500 KD", assima: "3.500 KD", avenues: "3.500 KD" },
   { cat: "Guardian Entry", marina: "Free (1)", assima: "Free (1)", avenues: "Free (1)" },
-  { cat: "Extra Adult", marina: "1 KD", assima: "1 KD", avenues: "1 KD" },
 ];
 
 const faqs = [
@@ -62,16 +62,6 @@ function PricingPage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="mt-8 rounded-2xl bg-brand-yellow/30 border-2 border-brand-yellow p-6 text-sm">
-              <p className="font-bold mb-1">Notes</p>
-              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                <li>Arcade games are charged separately via Happy Card.</li>
-                <li>Cash, KNet and major credit cards accepted.</li>
-                <li>Membership packages available — ask at reception.</li>
-              </ul>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
