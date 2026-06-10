@@ -7,6 +7,22 @@ import birthday from "@/assets/birthday.webp";
 import trampoline from "@/assets/unnamed (2).jpg";
 import ballpit from "@/assets/unnamed (1).jpg";
 import funvillage from "@/assets/funvillage.webp";
+import unnamed from "@/assets/unnamed (1).jpg";
+import unnamed2 from "@/assets/unnamed (2).jpg";  
+import unnamed3 from "@/assets/unnamed (3).jpg";
+import unnamed4 from "@/assets/unnamed (4).jpg";
+import unnamed5 from "@/assets/unnamed (5).jpg";
+import unnamed6 from "@/assets/unnamed (6).jpg";
+import unnamed7 from "@/assets/unnamed (7).jpg";
+import unnamed8 from "@/assets/unnamed (8).jpg";
+import unnamed9 from "@/assets/unnamed (9).jpg";
+import unnamed10 from "@/assets/unnamed (10).jpg";
+import unnamed11 from "@/assets/unnamed (11).jpg";
+import unnamed12 from "@/assets/unnamed (12).jpg";
+import unnamed13 from "@/assets/unnamed (13).jpg";
+import unnamed14 from "@/assets/unnamed (14).jpg";
+import ee from "@/assets/ee.jpg";
+
 
 export const Route = createFileRoute("/activities")({
   head: () => ({
@@ -21,12 +37,12 @@ export const Route = createFileRoute("/activities")({
 });
 
 const activities = [
-  { title: "Soft Play Areas", desc: "Multi-level structures, slides and tunnels for ages 1–12.", img: softplay, branches: ["Marina", "Assima", "Avenues"] },
+  { title: "Soft Play Areas", desc: "Multi-level structures, slides and tunnels for ages 1–9.", img: unnamed6, branches: ["Marina", "Assima", "Avenues"] },
   { title: "Arcade Games", desc: "Latest interactive games, redemption and prize tickets.", img: arcade, branches: ["Marina"] },
-  { title: "Fun Village (Marina)", desc: "Role-play town: bakery, hospital, supermarket and more.", img: funvillage, branches: ["Marina"] },
-  { title: "Party Rooms", desc: "Themed celebration rooms with dedicated event hosts.", img: birthday, branches: ["Marina", "Assima", "Avenues"] },
-  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: trampoline, branches: ["Avenues"] },
-  { title: "Ball Pit Adventures", desc: "Giant ball pit with cannons, climbing nets and slides.", img: ballpit, branches: ["Marina", "Assima"] },
+  { title: "Fun Village (Marina)", desc: "Role-play town: bakery, hospital, supermarket and more.", img: ee, branches: ["Marina"] },
+  { title: "Party Rooms", desc: "Themed celebration rooms with dedicated event hosts.", img: unnamed7, branches: ["Marina", "Assima"] },
+  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: unnamed4, branches: ["Avenues"] },
+  { title: "Ball Pit Adventures", desc: "Giant ball pit with cannons, climbing nets and slides.", img: ballpit, branches: ["Avenues"] },
 ];
 
 function ActivitiesPage() {
