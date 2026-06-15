@@ -63,9 +63,7 @@ const events = [
 ];
 
 function GalleryPage() {
-  const [filter, setFilter] = useState<"All" | "Play" | "Birthdays" | "Arcade">("All");
   const [open, setOpen] = useState<string | null>(null);
-  const filtered = filter === "All" ? photos : photos.filter((p) => p.cat === filter);
 
   return (
     <>
@@ -73,22 +71,8 @@ function GalleryPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <FadeIn className="flex flex-wrap justify-center gap-2 mb-10">
-            {(["All", "Play", "Birthdays", "Arcade"] as const).map((c) => (
-              <button
-                key={c}
-                onClick={() => setFilter(c)}
-                className={`px-5 py-2 rounded-full text-sm font-extrabold transition-all ${
-                  filter === c ? "bg-brand-purple text-primary-foreground shadow-pop" : "bg-muted hover:bg-brand-yellow/40"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </FadeIn>
-
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filtered.map((p, i) => (
+            {photos.map((p, i) => (
               <FadeIn key={`${p.src}${i}`} delay={(i % 4) * 0.05}>
                 <motion.button
                   whileHover={{ scale: 1.02 }}

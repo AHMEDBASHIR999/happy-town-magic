@@ -17,7 +17,7 @@ export const Route = createFileRoute("/pricing")({
 });
 
 const rows = [
-  { cat: "Fun Village Marina Mall", marina: "5.500 KD", assima: "5.500 KD", avenues: "5.500 KD" },
+  { cat: "Fun Village Marina Mall", marina: "5.500 KD", assima: "-", avenues: "-" },
   { cat: "Infants (under 1)", marina: "Free", assima: "Free", avenues: "Free" },
   { cat: "Children (1 to 9)", marina: "6.500 KD", assima: "6.500 KD", avenues: "6.500 KD" },
   { cat: "Special Needs", marina: "3.500 KD", assima: "3.500 KD", avenues: "3.500 KD" },

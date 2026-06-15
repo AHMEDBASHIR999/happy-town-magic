@@ -38,10 +38,10 @@ export const Route = createFileRoute("/activities")({
 
 const activities = [
   { title: "Soft Play Areas", desc: "Multi-level structures, slides and tunnels for ages 1–9.", img: unnamed6, branches: ["Marina", "Assima", "Avenues"] },
-  { title: "Arcade Games", desc: "Latest interactive games, redemption and prize tickets.", img: arcade, branches: ["Marina"] },
+  { title: "Arcade Games", desc: "Latest interactive games, redemption and prize tickets.", img: unnamed12, branches: ["Marina"] },
   { title: "Fun Village (Marina)", desc: "Role-play town: bakery, hospital, supermarket and more.", img: ee, branches: ["Marina"] },
   { title: "Party Rooms", desc: "Themed celebration rooms with dedicated event hosts.", img: unnamed7, branches: ["Marina", "Assima"] },
-  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: unnamed4, branches: ["Avenues"] },
+  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: unnamed4, branches: ["Assima"] },
   { title: "Ball Pit Adventures", desc: "Giant ball pit with cannons, climbing nets and slides.", img: ballpit, branches: ["Avenues"] },
 ];
 

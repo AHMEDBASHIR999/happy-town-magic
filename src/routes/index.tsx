@@ -187,7 +187,7 @@ function Hero() {
 const playAreas = [
   { icon: Castle, title: "Soft Play", desc: "Slides, ball pits & climbing structures for endless fun.", img: softplay, color: "bg-brand-purple" },
   { icon: Gamepad2, title: "Arcade Games", desc: "Latest games, prizes, and high-energy entertainment.", img: arcade, color: "bg-brand-yellow" },
-  { icon: PartyPopper, title: "Birthday Rooms", desc: "Themed celebrations your little one will never forget.", img: birthday, color: "bg-brand-purple" },
+  { icon: PartyPopper, title: "Birthday Rooms", desc: "Themed celebrations your little one will never forget.", img: imgCopy, color: "bg-brand-purple" },
   { icon: Sparkles, title: "Fun Village", desc: "An immersive role-play town only at Marina branch.", img: funvillage, color: "bg-brand-yellow" },
 ];
 
