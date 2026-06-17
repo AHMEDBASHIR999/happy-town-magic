@@ -22,7 +22,7 @@ import unnamed12 from "@/assets/unnamed (12).jpg";
 import unnamed13 from "@/assets/unnamed (13).jpg";
 import unnamed14 from "@/assets/unnamed (14).jpg";
 import ee from "@/assets/ee.jpg";
-import ee2 from "@/IMG_8349.jpg";
+import ee2 from "@/assets/IMG_8349.jpg";
 
 
 export const Route = createFileRoute("/activities")({
