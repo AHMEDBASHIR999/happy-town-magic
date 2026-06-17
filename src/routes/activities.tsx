@@ -22,7 +22,7 @@ import unnamed12 from "@/assets/unnamed (12).jpg";
 import unnamed13 from "@/assets/unnamed (13).jpg";
 import unnamed14 from "@/assets/unnamed (14).jpg";
 import ee from "@/assets/ee.jpg";
-import IMG_8349 from "@/IMG_8349.jpg";
+import ee2 from "@/IMG_8349.jpg";
 
 
 export const Route = createFileRoute("/activities")({
@@ -42,7 +42,7 @@ const activities = [
   { title: "Arcade Games", desc: "Latest interactive games, redemption and prize tickets.", img: unnamed12, branches: ["Marina"] },
   { title: "Fun Village (Marina)", desc: "Role-play town: bakery, hospital, supermarket and more.", img: ee, branches: ["Marina"] },
   { title: "Party Rooms", desc: "Themed celebration rooms with dedicated event hosts.", img: unnamed7, branches: ["Marina", "Assima"] },
-  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: IMG_8349, branches: ["Assima","Marina","Avenues"] },
+  { title: "Trampoline Park", desc: "Bounce, leap and play in our supervised trampoline zone.", img: ee2, branches: ["Assima","Marina","Avenues"] },
   { title: "Ball Pit Adventures", desc: "Giant ball pit with cannons, climbing nets and slides.", img: ballpit, branches: ["Avenues","Marina","Assima"] },
 ];
 
