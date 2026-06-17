@@ -18,8 +18,8 @@ export const Route = createFileRoute("/locations")({
 const locations = [
   {
     name: "Marina Mall",
-    area: "Salmiya",
-    floor: "Second Floor, near food court",
+    area: "Salmiya,",
+    floor: "First and second floor",
     phone: "+965 98572227",
     hours: ["Saturday - Wednesday: 10:00 AM - 10:30PM", "Thursday - Friday 10:00 AM - 11:00 PM"],
     features: ["Soft Play", "Arcade", "Birthday Rooms", "Fun Village"],
@@ -29,7 +29,7 @@ const locations = [
   {
     name: "Assima Mall",
     area: "Kuwait City",
-    floor: "Happy Town 5th Floor",
+    floor: "5th Floor",
     phone: "+965 99323061",
     hours: ["Saturday - Wednesday: 10:00 AM - 10:00PM", "Thursday - Friday 10:00 AM - 10:30 PM"],
     features: ["Soft Play", "Birthday Rooms", "Ball Pit"],
