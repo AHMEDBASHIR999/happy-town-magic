@@ -25,6 +25,7 @@ import img12 from "@/assets/unnamed (12).jpg";
 import img13 from "@/assets/unnamed (13).jpg";
 import img14 from "@/assets/unnamed (14).jpg";
 import imgCopy from "@/assets/unnamed copy.jpg";
+import ee2 from "@/assets/IMG_8349.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -54,6 +55,7 @@ const photos = [
   { src: img13, cat: "Play", h: "tall" },
   { src: img14, cat: "Play", h: "wide" },
   { src: imgCopy, cat: "Play", h: "tall" },
+  { src: ee2, cat: "Play", h: "wide" },
 ];
 
 const events = [
