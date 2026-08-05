@@ -6,6 +6,14 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 export default defineConfig({
+  server: {
+    host: "0.0.0.0",
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8080,
+  },
+  preview: {
+    host: "0.0.0.0",
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8080,
+  },
   plugins: [
     TanStackRouterVite({
       target: "react",
