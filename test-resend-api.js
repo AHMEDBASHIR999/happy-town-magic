@@ -23,7 +23,7 @@ try {
   
   console.log("Sending test email...");
   resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
+    from: "Happy Town <booking@happytownkw.com>",
     to: ["info@happytownkw.com"],
     cc: ["ahmedbashir824@gmail.com"],
     subject: "Test Resend Connection",

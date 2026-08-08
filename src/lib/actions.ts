@@ -14,7 +14,7 @@ export const submitBooking = createServerFn({ method: "POST" })
         .join("<br/>");
 
       const response = await resend.emails.send({
-        from: "Acme <onboarding@resend.dev>",
+        from: "Happy Town <booking@happytownkw.com>",
         to: ["info@happytownkw.com"],
         cc: ["ahmedbashir824@gmail.com"],
         subject: `New Booking Request from ${data.name || data.contactPerson || "User"}`,
