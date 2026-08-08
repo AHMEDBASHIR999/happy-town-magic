@@ -15,11 +15,13 @@ import path from "path";
 
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+const preset = process.env.NITRO_PRESET || (process.env.VERCEL ? "vercel" : "node-server");
+
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
   nitro: {
-    preset: "node-server",
+    preset,
   },
 });
