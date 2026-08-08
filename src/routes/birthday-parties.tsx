@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PartyPopper } from "lucide-react";
-import { PageHero, FadeIn } from "@/components/Motion";
+import { FadeIn, PageHero } from "@/components/Motion";
 import birthday from "@/assets/birthday.webp";
+import { submitBooking } from "@/lib/actions";
 
 export const Route = createFileRoute("/birthday-parties")({
   head: () => ({
@@ -20,6 +21,21 @@ export const Route = createFileRoute("/birthday-parties")({
 function BirthdaysPage() {
   const [form, setForm] = useState({ name: "", phone: "", date: "", guests: "", branch: "Marina", pkg: "Standard" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await submitBooking({ data: { type: "Birthday Party", ...form } });
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -44,7 +60,7 @@ function BirthdaysPage() {
             </div>
           ) : (
             <form
-              onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+              onSubmit={handleSubmit}
               className="rounded-3xl bg-card border p-8 shadow-lg grid sm:grid-cols-2 gap-4"
             >
               {[
@@ -76,8 +92,8 @@ function BirthdaysPage() {
                   <option>Basic</option><option>Standard</option><option>Premium</option>
                 </select>
               </label>
-              <button type="submit" className="sm:col-span-2 mt-2 rounded-full bg-brand-purple text-primary-foreground py-4 font-extrabold shadow-pop hover:scale-[1.02] transition-transform">
-                Request Booking
+              <button disabled={isSubmitting} type="submit" className="sm:col-span-2 mt-2 rounded-full bg-brand-purple text-primary-foreground py-4 font-extrabold shadow-pop hover:scale-[1.02] transition-transform disabled:opacity-70">
+                {isSubmitting ? "Sending..." : "Request Booking"}
               </button>
             </form>
           )}

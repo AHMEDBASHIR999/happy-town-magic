@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, Phone, MapPin, Mail } from "lucide-react";
-import { PageHero, FadeIn } from "@/components/Motion";
+import { FadeIn, PageHero } from "@/components/Motion";
+import { submitBooking } from "@/lib/actions";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -17,6 +18,25 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    
+    try {
+      await submitBooking({ data: { type: "Contact Inquiry", ...data } });
+      setSent(true);
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <PageHero eyebrow="Contact" title="Say hi to Happy Town" subtitle="We're a quick message away — pick whichever channel suits you best." />
@@ -48,19 +68,19 @@ function ContactPage() {
             </FadeIn>
           ) : (
             <FadeIn>
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="rounded-3xl bg-card border p-8 shadow-lg grid sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="rounded-3xl bg-card border p-8 shadow-lg grid sm:grid-cols-2 gap-4">
                 <h2 className="sm:col-span-2 font-display font-extrabold text-3xl text-center mb-2">Send us a message</h2>
                 <label className="text-sm font-semibold">Name
-                  <input required className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
+                  <input name="Name" required className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
                 </label>
                 <label className="text-sm font-semibold">Phone
-                  <input required type="tel" className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
+                  <input name="Phone" required type="tel" className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
                 </label>
                 <label className="sm:col-span-2 text-sm font-semibold">Email
-                  <input required type="email" className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
+                  <input name="Email" required type="email" className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
                 </label>
                 <label className="sm:col-span-2 text-sm font-semibold">Inquiry type
-                  <select className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple">
+                  <select name="Inquiry type" className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple">
                     <option>General question</option>
                     <option>Birthday party</option>
                     <option>School trip</option>
@@ -68,10 +88,10 @@ function ContactPage() {
                   </select>
                 </label>
                 <label className="sm:col-span-2 text-sm font-semibold">Message
-                  <textarea rows={4} required className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
+                  <textarea name="Message" rows={4} required className="mt-1 w-full rounded-xl border-2 border-border bg-background px-4 py-3 outline-none focus:border-brand-purple" />
                 </label>
-                <button className="sm:col-span-2 rounded-full bg-brand-purple text-primary-foreground py-4 font-extrabold shadow-pop hover:scale-[1.02] transition-transform">
-                  Send Message
+                <button disabled={isSubmitting} className="sm:col-span-2 rounded-full bg-brand-purple text-primary-foreground py-4 font-extrabold shadow-pop hover:scale-[1.02] transition-transform disabled:opacity-70">
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </FadeIn>
