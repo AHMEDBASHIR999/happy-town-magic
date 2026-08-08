@@ -13,16 +13,21 @@ export const submitBooking = createServerFn({ method: "POST" })
         .map(([key, value]) => `<strong>${key}</strong>: ${value}`)
         .join("<br/>");
 
-      await resend.emails.send({
+      const response = await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
         to: ["info@happytownkw.com"],
+        cc: ["ahmedbashir824@gmail.com"],
         subject: `New Booking Request from ${data.name || data.contactPerson || "User"}`,
         html: `<p>You have received a new booking request:</p><p>${emailContent}</p>`,
       });
 
+      if (response.error) {
+        throw new Error(response.error.message || "Resend API returned an error");
+      }
+
       return { success: true };
     } catch (error) {
-      console.error("Error sending email", error);
-      return { success: false, error: "Failed to send email" };
+      console.error("Error sending email:", error);
+      throw error;
     }
   });

@@ -30,9 +30,9 @@ function SchoolTripsPage() {
     try {
       await submitBooking({ data: { type: "School Trip", ...data } });
       setSubmitted(true);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert("Something went wrong. Please try again.");
+      alert(error?.message || "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
