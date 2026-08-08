@@ -17,7 +17,7 @@ export default defineConfig({
     preset: process.env.NITRO_PRESET || (process.env.VERCEL ? "vercel" : "node-server"),
     output: process.env.VERCEL ? {
       dir: ".vercel/output",
-      serverDir: ".vercel/output/functions/index.func",
+      serverDir: ".vercel/output/functions/__server.func",
       publicDir: ".vercel/output/static",
     } : undefined,
   },
